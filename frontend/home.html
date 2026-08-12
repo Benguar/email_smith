@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendEmail App</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Google Fonts for the cursive logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <!-- Header Bar --> 
+    <header class="window-header"> 
+        <!-- <button class="sign-in-btn" onclick="signin()">
+            <span class="g-icon">
+                <i class="fa-brands fa-google"></i>
+            </span>
+            Sign in
+        </button> -->
+        <button id="sign-in-btn" class="sign-in-btn" onclick="signin()">
+            <span class="g-icon">
+                <i class="fa-brands fa-google"></i>
+            </span>
+            <span class="sign-in-text">Sign in</span>
+        </button>
+        <div class="window-controls">
+            <div class="dot red"></div> 
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+        </div>
+    </header>
+
+    <!-- Main Application Area -->
+    <main class="window-body">
+        
+        <!-- Email Draft Section -->
+        <div class="email-wrapper">
+            <div class="sparkles">
+                <i class="fa-solid fa-sparkles"></i>
+            </div>
+            
+            <div class="email-draft-box">
+                <div class="input-row">
+                    <span class="label">From</span> <div contenteditable="false" class="label-content" id="from-content"></div>
+                </div>
+                <div class="input-row">
+                    <span class="label">To</span> <div contenteditable="true" class="label-content" id="to-content"></div>
+                </div>
+                <div class="input-row">
+                    <span class="label">Subject</span> <div contenteditable="true" class="label-content" id="subject-content"></div>
+                </div>
+                <div contenteditable="true" class="email-body" id="body-content"></div>
+            </div>
+        </div>
+
+        <!-- Warning Banner -->
+        <div class="warning-banner">
+            <i class="fa-solid fa-circle-info fa-lg"></i> Review draft before agent sends this
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button type="button" class="btn btn-send" onclick="send()">
+                <i class="fa-solid fa-check fa-lg" style="color: rgb(0, 0, 0)"></i>Send
+            </button>
+            <button type="button" class="btn btn-edit" onclick="edit()">
+                <i class="fa-solid fa-pen-to-square"></i> Edit
+            </button>
+            <button type="button" class="btn btn-discard" onclick="discard()">
+                <i class="fa-solid fa-xmark"></i> Discard
+            </button>
+        </div>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="window-footer">
+        <div class="support-icon">
+            <i class="fa-solid fa-headphones"></i>
+        </div>
+        <!-- Prompt Input Section -->
+        <div class="prompt-area">
+            <textarea class="prompt-input" id="prompt-input" placeholder="Enter a prompt to generate mail" rows="1"></textarea>
+            <button type="button" class="prompt-submit" id="prompt-submit" onclick="send_prompt()">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+            <h6 class="logo-text">Emailsmith</h6>
+    </footer>
+</body>
+</html>
