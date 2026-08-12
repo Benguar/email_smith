@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+things_to_do.txt
+.VSCodeCounter
