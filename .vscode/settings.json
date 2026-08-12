@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.ignoreFiles": [
+        "**/*.sqlite",
+        "**/*.sqlite3",
+        "**/*.sqlite-shm",
+        "**/*.sqlite-wal",
+        "**/*.db",
+        "**/__pycache__/**"
+    ]
+}
