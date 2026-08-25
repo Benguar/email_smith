@@ -4,7 +4,7 @@ sys.path.append(os.getcwd())
 from fastapi import APIRouter, Request,Response
 from auth.schemas.classes import SendPrompt,ResumePrompt
 from langgraph.types import Command
-from ochestration_main import call_graph,graph
+from ochestration.ochestration_main import call_graph,graph
 import asyncio
 from uuid6 import uuid7
 route = APIRouter()
@@ -51,5 +51,4 @@ def resume_graph(resume: ResumePrompt, request: Request,response: Response):
         path="/",
     )
     return boy["messages"][-1].content
-
 
