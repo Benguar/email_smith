@@ -152,6 +152,11 @@ send = async () => {
     const BodyDiv = document.getElementById("body-content")
     const WindowBody = document.querySelector('.window-body')
     const submitBtn = document.getElementById('prompt-submit')
+    ToDiv.innerHTML = ''
+    FromDiv.innerHTML = ''
+    SubjectDiv.innerHTML = ''
+    BodyDiv.innerHTML = ''
+    WindowBody.style.visibility = 'hidden'
     payload ={
      "decision": "yes",
      "thread_id": "1",
@@ -177,11 +182,6 @@ send = async () => {
     const response = await request.json()
     console.log(response)
     if (response === "successful"){
-        ToDiv.innerHTML = ''
-        FromDiv.innerHTML = ''
-        SubjectDiv.innerHTML = ''
-        BodyDiv.innerHTML = ''
-        WindowBody.style.visibility = 'hidden'
         submitBtn.onclick = send_prompt
     }
 }
@@ -192,6 +192,12 @@ discard = async () => {
     const BodyDiv = document.getElementById("body-content")
     const WindowBody = document.querySelector('.window-body')
     const submitBtn = document.getElementById('prompt-submit')
+    ToDiv.innerHTML = ''
+    FromDiv.innerHTML = ''
+    SubjectDiv.innerHTML = ''
+    BodyDiv.innerHTML = ''
+    WindowBody.style.visibility = 'hidden'
+    submitBtn.onclick = send_prompt
     payload ={
      "decision": "no",
      "subject": SubjectDiv.innerHTML,
@@ -215,12 +221,6 @@ discard = async () => {
     )
     const response = await request.json()
     console.log(response)
-    ToDiv.innerHTML = ''
-    FromDiv.innerHTML = ''
-    SubjectDiv.innerHTML = ''
-    BodyDiv.innerHTML = ''
-    WindowBody.style.visibility = 'hidden'
-    submitBtn.onclick = send_prompt
 }
 
 edit =  () => {
